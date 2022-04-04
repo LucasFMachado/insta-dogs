@@ -12,7 +12,7 @@ const Login = () => {
   const { login } = useContext(UserContext)
 
   if (login) {
-    return <Navigate to='conta' />
+    return <Navigate to='/conta' />
   }
 
   return (
