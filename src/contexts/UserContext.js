@@ -8,8 +8,8 @@ export const UserProvider = ({ children }) => {
   const navigate = useNavigate()
   const [data, setData] = useState(null)
   const [login, setLogin] = useState(null)
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState(false)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
 
   async function getUser(token) {
     const { url, options } = USER_GET(token)
@@ -71,6 +71,7 @@ export const UserProvider = ({ children }) => {
         }
       } else {
         setLogin(false)
+        setLoading(false)
       }
     }
     autoLogin()

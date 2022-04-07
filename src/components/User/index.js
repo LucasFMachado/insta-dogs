@@ -5,8 +5,8 @@ import UserPhotoPost from './userPhotoPost';
 import UserStats from './userStats';
 import Feed from '../Feed'
 
-import styles from './User.module.css'
 import { UserContext } from '../../contexts/UserContext';
+import PageNotFound from '../Helpers/PageNotFound';
 
 const User = () => {
   const { data } = useContext(UserContext)
@@ -17,6 +17,7 @@ const User = () => {
         <Route path="/" element={<Feed user={data.id} />} />
         <Route path="/postar" element={<UserPhotoPost />} />
         <Route path="/estatisticas" element={<UserStats />} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </section>
   )
