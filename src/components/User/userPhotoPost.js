@@ -23,7 +23,7 @@ const UserPhotoPost = () => {
     }
   }, [data, navigate])
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault()
     const formData = new FormData()
     formData.append('img', img.raw)
@@ -33,7 +33,7 @@ const UserPhotoPost = () => {
 
     const token = localStorage.getItem('token.dogs')
     const { url, options } = PHOTO_POST(formData, token)
-    request(url, options)
+    await request(url, options)
   }
 
   function handleImgChange({target}) {
@@ -54,7 +54,7 @@ const UserPhotoPost = () => {
         />
         <Input
           label="Peso"
-          type="text"
+          type="number"
           name="peso"
           {...peso}
         />

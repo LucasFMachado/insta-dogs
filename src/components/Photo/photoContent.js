@@ -1,20 +1,28 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { UserContext } from '../../contexts/UserContext'
 import PhotoComments from './photoComments'
+import PhotoDelete from './photoDelete'
+import Image from '../Helpers/Image'
 
 import styles from './PhotoContent.module.css'
 
-const PhotoContent = ({data}) => {
+const PhotoContent = ({data, singlePage}) => {
   const { photo, comments } = data
+  const user = useContext(UserContext)
+
   return (
-    <div className={styles.photo}>
+    <div className={`${styles.photo} ${singlePage ? styles.single : ''}`}>
       <div className={styles.img}>
-        <img src={photo.src} alt={photo.title} />
+        <Image src={photo.src} alt={photo.title} />
       </div>
       <div className={styles.details}>
         <div>
           <p className={styles.author}>
-            <Link to={`/perfil/${photo.author}`}>@{photo.author}</Link>
+            {user.data?.username === photo.author
+              ? <PhotoDelete id={photo.id} />
+              : <Link to={`/perfil/${photo.author}`}>@{photo.author}</Link>
+            }
             <span className={styles.visualizacoes}>{photo.acessos}</span>
           </p>
           <h1 className="title">
@@ -26,7 +34,11 @@ const PhotoContent = ({data}) => {
           </ul>
         </div>
       </div>
-      <PhotoComments id={photo.id} comments={comments} />
+      <PhotoComments
+        id={photo.id}
+        comments={comments}
+        singlePage={singlePage}
+      />
     </div>
   )
 }

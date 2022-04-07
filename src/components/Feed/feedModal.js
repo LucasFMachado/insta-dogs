@@ -11,8 +11,11 @@ const FeedModal = ({photo, setModalPhoto}) => {
   const { data, error, loading, request } = useFetch()
 
   useEffect(() => {
-    const { url, options } = PHOTO_GET(photo.id)
-    request(url, options)
+    async function getPhoto() {
+      const { url, options } = PHOTO_GET(photo.id)
+      await request(url, options)
+    }
+    getPhoto()
   }, [photo, request])
 
   function handleOutsideClick(e) {

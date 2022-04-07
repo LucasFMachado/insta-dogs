@@ -7,22 +7,24 @@ import Loading from '../Helpers/Loading'
 
 import styles from './FeedPhotos.module.css'
 
-const FeedPhotos = ({setModalPhoto}) => {
-
+const FeedPhotos = ({user, page, setInfinite, setModalPhoto}) => {
   const { data, loading, error, request } = useFetch()
 
   useEffect(() => {
     async function fetchPhotos() {
+      const total = 6
       const { url, options } = PHOTOS_GET({
-        page: 1,
-        total: 6,
-        user: 0
+        page,
+        total,
+        user
       })
-      const { response, json } = request(url, options)
-      console.log(json)
+      const { response, json } = await request(url, options)
+      if (response && response.ok && json.length < total) {
+        setInfinite(false)
+      }
     }
     fetchPhotos()
-  }, [request])
+  }, [page, user, request, setInfinite])
 
   if (error) {
     return <Error message={error} />
