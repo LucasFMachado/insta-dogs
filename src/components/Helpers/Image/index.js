@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 
 import styles from './styles.module.css'
 
-const Image = ({alt, ...props}) => {
+const Image = ({ alt, ...props }) => {
   const [skeleton, setSkeleton] = useState(true)
 
-  function handleLoad({ target }) {
+  function handleLoad ({ target }) {
     setSkeleton(false)
     target.style.opacity = 1
   }

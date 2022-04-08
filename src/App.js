@@ -1,19 +1,20 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Home from './components/Home'
-import User from './components/User/User'
-import Login from './components/Login/Login'
-import Header from './components/Header'
+
 import Footer from './components/Footer'
-import { UserProvider } from './contexts/UserContext'
-import ProtectedRoute from './components/Helpers/ProtectedRoute'
-import Photo from './components/Photo/Photo'
-import UserProfile from './components/User/UserProfile'
+import Header from './components/Header'
 import PageNotFound from './components/Helpers/PageNotFound'
+import ProtectedRoute from './components/Helpers/ProtectedRoute'
+import Home from './components/Home'
+import Login from './components/Login/Login'
+import Photo from './components/Photo/Photo'
+import User from './components/User/User'
+import UserProfile from './components/User/UserProfile'
+import { UserProvider } from './contexts/UserContext'
 
 import './App.css'
 
-function App() {
+function App () {
   return (
     <div className="App">
       <BrowserRouter>

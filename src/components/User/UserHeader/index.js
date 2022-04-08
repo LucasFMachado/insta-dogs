@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
-import UserHeaderNav from '../UserHeaderNav';
+import React, { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 
+import UserHeaderNav from '../UserHeaderNav'
 import styles from './styles.module.css'
 
 const UserHeader = () => {
@@ -13,13 +13,13 @@ const UserHeader = () => {
     switch (pathname) {
       case '/conta/postar':
         setTitle('Poste sua foto')
-        break;
+        break
       case '/conta/estatisticas':
         setTitle('Estatísticas')
-        break;
+        break
       default:
         setTitle('Minha conta')
-        break;
+        break
     }
   }, [location])
 
@@ -31,4 +31,4 @@ const UserHeader = () => {
   )
 }
 
-export default UserHeader;
+export default UserHeader

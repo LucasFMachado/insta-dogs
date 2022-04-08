@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from "react"
-import { useNavigate } from "react-router-dom"
-import useForm from '../../../hooks/useForm'
+import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+
 import useFetch from '../../../hooks/useFetch'
-import Head from '../../Helpers/Head'
-import Input from '../../Form/Input'
+import useForm from '../../../hooks/useForm'
+import { PASSWORD_RESET } from '../../../services/api'
 import Button from '../../Form/Button'
+import Input from '../../Form/Input'
 import Error from '../../Helpers/Error'
-import { PASSWORD_RESET } from "../../../services/api"
+import Head from '../../Helpers/Head'
 
 const LoginPasswordReset = () => {
   const [login, setLogin] = useState('')
@@ -29,7 +30,7 @@ const LoginPasswordReset = () => {
     }
   }, [])
 
-  async function handleSubmit(e) {
+  async function handleSubmit (e) {
     e.preventDefault()
     if (password.validate()) {
       const { url, options } = PASSWORD_RESET({

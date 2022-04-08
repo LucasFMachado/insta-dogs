@@ -1,12 +1,13 @@
-import React, { useContext } from 'react';
-import { Routes, Route } from 'react-router-dom';
-import UserHeader from '../UserHeader';
-import UserPhotoPost from '../UserPhotoPost';
-import UserStats from '../UserStats';
+import React, { useContext } from 'react'
+import { Routes, Route } from 'react-router-dom'
+
+import { UserContext } from '../../../contexts/UserContext'
 import Feed from '../../Feed/Feed'
 import Head from '../../Helpers/Head'
-import { UserContext } from '../../../contexts/UserContext';
-import PageNotFound from '../../Helpers/PageNotFound';
+import PageNotFound from '../../Helpers/PageNotFound'
+import UserHeader from '../UserHeader'
+import UserPhotoPost from '../UserPhotoPost'
+import UserStats from '../UserStats'
 
 const User = () => {
   const { data } = useContext(UserContext)
@@ -24,4 +25,4 @@ const User = () => {
   )
 }
 
-export default User;
+export default User

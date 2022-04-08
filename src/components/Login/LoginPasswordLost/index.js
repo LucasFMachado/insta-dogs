@@ -1,17 +1,18 @@
-import React from "react"
-import useForm from '../../../hooks/useForm'
+import React from 'react'
+
 import useFetch from '../../../hooks/useFetch'
-import Head from '../../Helpers/Head'
-import Input from '../../Form/Input'
+import useForm from '../../../hooks/useForm'
+import { PASSWORD_LOST } from '../../../services/api'
 import Button from '../../Form/Button'
+import Input from '../../Form/Input'
 import Error from '../../Helpers/Error'
-import { PASSWORD_LOST } from "../../../services/api"
+import Head from '../../Helpers/Head'
 
 const LoginPasswordLost = () => {
   const email = useForm('email')
   const { data, loading, error, request } = useFetch()
-  
-  async function handleSubmit(e) {
+
+  async function handleSubmit (e) {
     e.preventDefault()
     if (email.validate()) {
       const { url, options } = PASSWORD_LOST({
@@ -42,7 +43,7 @@ const LoginPasswordLost = () => {
               : <Button>Enviar email</Button>
             }
           </form>
-        )
+          )
       }
       <Error message={error} />
     </section>

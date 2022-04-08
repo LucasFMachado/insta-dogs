@@ -1,13 +1,13 @@
 import React from 'react'
-import { PHOTO_DELETE } from '../../../services/api'
-import useFetch from '../../../hooks/useFetch'
 
+import useFetch from '../../../hooks/useFetch'
+import { PHOTO_DELETE } from '../../../services/api'
 import styles from './styles.module.css'
 
 const PhotoDelete = ({ id }) => {
   const { loading, request } = useFetch()
 
-  async function handleClick() {
+  async function handleClick () {
     const confirm = window.confirm('Tem certeza que deseja deletar?')
     if (confirm) {
       const { url, options } = PHOTO_DELETE(id)

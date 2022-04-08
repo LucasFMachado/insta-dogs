@@ -4,7 +4,7 @@ const useMedia = (media) => {
   const [match, setMatch] = useState(null)
 
   useEffect(() => {
-    function changeMatch() {
+    function changeMatch () {
       const { matches } = window.matchMedia(media)
       setMatch(matches)
     }

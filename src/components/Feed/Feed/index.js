@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+
 import FeedModal from '../FeedModal'
 import FeedPhotos from '../FeedPhotos'
 
@@ -9,7 +10,7 @@ const Feed = ({ user }) => {
 
   useEffect(() => {
     let wait = false
-    function infiniteScroll() {
+    function infiniteScroll () {
       if (infinite) {
         const scroll = window.scrollY
         const height = document.body.offsetHeight - window.innerHeight
@@ -22,7 +23,7 @@ const Feed = ({ user }) => {
         }
       }
     }
-    
+
     window.addEventListener('wheel', infiniteScroll)
     window.addEventListener('scroll', infiniteScroll)
     return () => {

@@ -1,9 +1,10 @@
-import React, { useContext } from 'react';
-import { Navigate } from 'react-router-dom';
-import { UserContext } from '../../../contexts/UserContext';
-import Loading from '../Loading';
+import React, { useContext } from 'react'
+import { Navigate } from 'react-router-dom'
 
-const ProtectedRoute = ({children}) => {
+import { UserContext } from '../../../contexts/UserContext'
+import Loading from '../Loading'
+
+const ProtectedRoute = ({ children }) => {
   const { login, loading } = useContext(UserContext)
 
   if (loading) {

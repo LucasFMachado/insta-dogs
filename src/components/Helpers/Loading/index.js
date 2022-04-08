@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react'
 
 import styles from './styles.module.css'
 
@@ -6,7 +6,7 @@ const Loading = () => {
   const [step, setStep] = useState(0)
 
   useEffect(() => {
-    function updateStep() {
+    function updateStep () {
       setStep(step => {
         if (step < 4) {
           return step + 1
@@ -21,7 +21,7 @@ const Loading = () => {
     }
   }, [])
 
-  function displayStep(currentStep) {
+  function displayStep (currentStep) {
     return {
       display: step === currentStep ? 'block' : 'none'
     }
@@ -62,4 +62,4 @@ const Loading = () => {
   )
 }
 
-export default Loading;
+export default Loading

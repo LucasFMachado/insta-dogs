@@ -1,13 +1,13 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+
 import { UserContext } from '../../../contexts/UserContext'
+import Image from '../../Helpers/Image'
 import PhotoComments from '../PhotoComments'
 import PhotoDelete from '../PhotoDelete'
-import Image from '../../Helpers/Image'
-
 import styles from './styles.module.css'
 
-const PhotoContent = ({data, singlePage}) => {
+const PhotoContent = ({ data, singlePage }) => {
   const { photo, comments } = data
   const user = useContext(UserContext)
 

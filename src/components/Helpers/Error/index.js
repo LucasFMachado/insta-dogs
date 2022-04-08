@@ -2,8 +2,7 @@ import React from 'react'
 
 import styles from './styles.module.css'
 
-const Error = ({message}) => {
-
+const Error = ({ message }) => {
   if (!message) {
     return null
   }

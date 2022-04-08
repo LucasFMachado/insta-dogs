@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
+
+import { ReactComponent as AdicionarFoto } from '../../../assets/adicionar.svg'
+import { ReactComponent as Estatisticas } from '../../../assets/estatisticas.svg'
+import { ReactComponent as MinhasFotos } from '../../../assets/feed.svg'
+import { ReactComponent as Sair } from '../../../assets/sair.svg'
 import { UserContext } from '../../../contexts/UserContext'
 import useMedia from '../../../hooks/useMedia'
-import { ReactComponent as MinhasFotos } from '../../../assets/feed.svg'
-import { ReactComponent as Estatisticas } from '../../../assets/estatisticas.svg'
-import { ReactComponent as AdicionarFoto } from '../../../assets/adicionar.svg'
-import { ReactComponent as Sair } from '../../../assets/sair.svg'
-
 import styles from './styles.module.css'
 
 const UserHeaderNav = () => {

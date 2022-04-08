@@ -1,7 +1,7 @@
 import React, { useState, useContext, useRef, useEffect } from 'react'
+
 import { UserContext } from '../../../contexts/UserContext'
 import PhotoCommentsForm from '../PhotoCommentsForm'
-
 import styles from './styles.module.css'
 
 const PhotoComments = (props) => {
@@ -11,7 +11,7 @@ const PhotoComments = (props) => {
 
   useEffect(() => {
     commentsSection.current.scrollTop = commentsSection.current.scrollHeight
-  },[comments])
+  }, [comments])
 
   return (
     <>

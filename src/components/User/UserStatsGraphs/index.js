@@ -6,7 +6,7 @@ import styles from './styles.module.css'
 const UserStatsGraphs = ({ data }) => {
   const [graph, setGraph] = useState([])
   const [total, setTotal] = useState(0)
-  
+
   useEffect(() => {
     setGraph(data.map(({ title, acessos }) => {
       return { x: title, y: Number(acessos) }
@@ -35,12 +35,12 @@ const UserStatsGraphs = ({ data }) => {
                   data: {
                     fillOpacity: 0.9,
                     stroke: '#fff',
-                    strokeWidth: 2,
+                    strokeWidth: 2
                   },
                   labels: {
                     fontSize: 14,
-                    fill: '#333',
-                  },
+                    fill: '#333'
+                  }
                 }}
               />
             </div>
@@ -50,7 +50,7 @@ const UserStatsGraphs = ({ data }) => {
               </VictoryChart>
             </div>
           </>
-        )
+          )
         : null
       }
     </section>

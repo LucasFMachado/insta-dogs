@@ -1,6 +1,7 @@
 import React from 'react'
-import Head from '../Helpers/Head'
+
 import Feed from '../Feed/Feed'
+import Head from '../Helpers/Head'
 
 const Home = () => {
   return (

@@ -16,7 +16,7 @@ const useForm = (type) => {
   const [value, setValue] = useState('')
   const [error, setError] = useState(null)
 
-  function validate() {
+  function validate () {
     if (type === false) {
       return true
     }
@@ -35,7 +35,7 @@ const useForm = (type) => {
     return true
   }
 
-  function onChange({target}) {
+  function onChange ({ target }) {
     if (error) {
       validate(target.value)
     }

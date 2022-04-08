@@ -1,21 +1,21 @@
-import React, { useContext } from "react"
-import { Link } from "react-router-dom"
-import Head from '../../Helpers/Head'
-import Input from '../../Form/Input'
-import Button from '../../Form/Button'
-import Error from '../../Helpers/Error'
-import useForm from "../../../hooks/useForm"
-import { UserContext } from "../../../contexts/UserContext"
+import React, { useContext } from 'react'
+import { Link } from 'react-router-dom'
 
+import { UserContext } from '../../../contexts/UserContext'
+import useForm from '../../../hooks/useForm'
+import Button from '../../Form/Button'
+import Input from '../../Form/Input'
+import Error from '../../Helpers/Error'
+import Head from '../../Helpers/Head'
 import styles from './styles.module.css'
 
 const LoginForm = () => {
-  const username = useForm();
-  const password = useForm();
+  const username = useForm()
+  const password = useForm()
 
   const { userLogin, error, loading } = useContext(UserContext)
 
-  async function handleSubmit(e) {
+  async function handleSubmit (e) {
     e.preventDefault()
     if (username.validate() && password.validate()) {
       userLogin(username.value, password.value)

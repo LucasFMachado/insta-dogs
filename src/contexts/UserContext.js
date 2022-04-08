@@ -1,5 +1,6 @@
 import React, { createContext, useCallback, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+
 import { TOKEN_POST, TOKEN_VALIDATE_POST, USER_GET } from '../services/api'
 
 export const UserContext = createContext()
@@ -11,7 +12,7 @@ export const UserProvider = ({ children }) => {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
 
-  async function getUser(token) {
+  async function getUser (token) {
     const { url, options } = USER_GET(token)
     const response = await fetch(url, options)
     const json = await response.json()
@@ -19,7 +20,7 @@ export const UserProvider = ({ children }) => {
     setLogin(true)
   }
 
-  async function userLogin(username, password) {
+  async function userLogin (username, password) {
     try {
       setError(null)
       setLoading(true)
@@ -32,7 +33,7 @@ export const UserProvider = ({ children }) => {
       window.localStorage.setItem('token.dogs', token)
       await getUser(token)
       navigate('/conta')
-    } catch(err) {
+    } catch (err) {
       setError(err.message)
       setLogin(false)
     } finally {
@@ -52,7 +53,7 @@ export const UserProvider = ({ children }) => {
   )
 
   useEffect(() => {
-    async function autoLogin() {
+    async function autoLogin () {
       const token = window.localStorage.getItem('token.dogs')
       if (token) {
         try {
@@ -64,7 +65,7 @@ export const UserProvider = ({ children }) => {
             throw new Error('Token inválido')
           }
           await getUser(token)
-        } catch(err) {
+        } catch (err) {
           userLogout()
         } finally {
           setLoading(false)

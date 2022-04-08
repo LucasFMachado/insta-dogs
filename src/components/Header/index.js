@@ -1,12 +1,12 @@
 import React, { useContext } from 'react'
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
+
 import { ReactComponent as Dogs } from '../../assets/dogs.svg'
 import { UserContext } from '../../contexts/UserContext'
-
 import styles from './styles.module.css'
 
-function Header() {
-  const { data } = useContext(UserContext);
+function Header () {
+  const { data } = useContext(UserContext)
 
   return (
     <header className={styles.header}>
@@ -19,16 +19,16 @@ function Header() {
             <Link className={styles.login} to="/conta">
               {data.nome}
             </Link>
-          )
+            )
           : (
             <Link className={styles.login} to="/login">
               Login / Cadastrar
             </Link>
-          )
+            )
         }
       </nav>
     </header>
-  );
+  )
 }
 
 export default Header

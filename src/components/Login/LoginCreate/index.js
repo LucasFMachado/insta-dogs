@@ -1,21 +1,22 @@
-import React, { useContext } from "react"
-import Head from '../../Helpers/Head'
-import Input from '../../Form/Input'
+import React, { useContext } from 'react'
+
+import { UserContext } from '../../../contexts/UserContext'
+import useFetch from '../../../hooks/useFetch'
+import useForm from '../../../hooks/useForm'
+import { USER_POST } from '../../../services/api'
 import Button from '../../Form/Button'
+import Input from '../../Form/Input'
 import Error from '../../Helpers/Error'
-import useForm from "../../../hooks/useForm"
-import useFetch from "../../../hooks/useFetch"
-import { USER_POST } from "../../../services/api"
-import { UserContext } from "../../../contexts/UserContext"
+import Head from '../../Helpers/Head'
 
 const LoginCreate = () => {
-  const username = useForm();
-  const email = useForm('email');
-  const password = useForm();
+  const username = useForm()
+  const email = useForm('email')
+  const password = useForm()
   const { loading, error, request } = useFetch()
   const { userLogin } = useContext(UserContext)
 
-  async function handleSubmit(e) {
+  async function handleSubmit (e) {
     e.preventDefault()
     const { url, options } = USER_POST({
       username: username.value,
@@ -52,7 +53,7 @@ const LoginCreate = () => {
           {...password}
         />
         {loading
-          ? <Button disabled>Carregando..</Button>    
+          ? <Button disabled>Carregando..</Button>
           : <Button>Cadastrar</Button>
         }
         <Error message={error} />
