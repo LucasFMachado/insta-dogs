@@ -1,4 +1,4 @@
-export const API_URL = 'https://dogsapi.origamid.dev/json'
+export const API_URL = process.env.REACT_APP_API_URL
 
 export function TOKEN_POST(body) {
   return {
@@ -102,6 +102,44 @@ export function PHOTO_DELETE(id) {
     url: `${API_URL}/api/photo/${id}`,
     options: {
       method: 'DELETE',
+      headers: {
+        Authorization: `Bearer ${window.localStorage.getItem('token.dogs')}`
+      }
+    }
+  }
+}
+
+export function PASSWORD_LOST(body) {
+  return {
+    url: `${API_URL}/api/password/lost`,
+    options: {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(body)
+    }
+  }
+}
+
+export function PASSWORD_RESET(body) {
+  return {
+    url: `${API_URL}/api/password/reset`,
+    options: {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(body)
+    }
+  }
+}
+
+export function STATS_GET() {
+  return {
+    url: `${API_URL}/api/stats`,
+    options: {
+      method: 'GET',
       headers: {
         Authorization: `Bearer ${window.localStorage.getItem('token.dogs')}`
       }

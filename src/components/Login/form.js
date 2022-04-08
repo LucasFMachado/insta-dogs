@@ -1,5 +1,6 @@
 import React, { useContext } from "react"
 import { Link } from "react-router-dom"
+import Head from '../Helpers/Head'
 import Input from '../Form/Input'
 import Button from '../Form/Button'
 import Error from '../Helpers/Error'
@@ -23,6 +24,7 @@ const LoginForm = () => {
 
   return (
     <section className="animeLeft">
+      <Head title="Login" />
       <h1 className="title">Login</h1>
       <form className={styles.form} onSubmit={handleSubmit}>
         <Input

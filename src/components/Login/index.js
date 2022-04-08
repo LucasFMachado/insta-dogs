@@ -1,6 +1,7 @@
 import React, { useContext } from "react"
 import { Navigate, Route, Routes } from "react-router-dom"
 import { UserContext } from "../../contexts/UserContext"
+import Head from '../Helpers/Head'
 import LoginCreate from "./create"
 import LoginForm from "./form"
 import LoginPasswordLost from "./passwordLost"
@@ -18,6 +19,7 @@ const Login = () => {
 
   return (
     <section className={styles.login}>
+      <Head title="Login" />
       <div className={styles.forms}>
         <Routes>
           <Route path="/" element={<LoginForm />} />

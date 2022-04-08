@@ -26,7 +26,7 @@ export const UserProvider = ({ children }) => {
       const { url, options } = TOKEN_POST({ username, password })
       const tokenRes = await fetch(url, options)
       if (!tokenRes.ok) {
-        throw new Error('Erro: Usuário inválido')
+        throw new Error('Credenciais inválidas')
       }
       const { token } = await tokenRes.json()
       window.localStorage.setItem('token.dogs', token)

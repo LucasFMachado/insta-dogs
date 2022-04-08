@@ -1,4 +1,5 @@
 import React, { useContext } from "react"
+import Head from '../Helpers/Head'
 import Input from '../Form/Input'
 import Button from '../Form/Button'
 import Error from '../Helpers/Error'
@@ -29,6 +30,7 @@ const LoginCreate = () => {
 
   return (
     <section className="animeLeft">
+      <Head title="Criar conta" />
       <h1 className="title">Cadastre-se</h1>
       <form onSubmit={handleSubmit}>
         <Input
