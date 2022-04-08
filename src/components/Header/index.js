@@ -22,7 +22,7 @@ function Header () {
             )
           : (
             <Link className={styles.login} to="/login">
-              Login / Cadastrar
+              Login / Cadastro
             </Link>
             )
         }
