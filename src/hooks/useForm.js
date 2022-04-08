@@ -8,7 +8,7 @@ const validateTypes = {
   },
   number: {
     regex: /^\d+$/,
-    message: 'Somente apenas números'
+    message: 'Somente permitido inserir números'
   }
 }
 

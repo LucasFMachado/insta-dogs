@@ -1,16 +1,17 @@
 import React from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import './App.css'
-import Home from './components/Home';
-import User from './components/User';
-import Login from './components/Login';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from './components/Home'
+import User from './components/User/User'
+import Login from './components/Login/Login'
+import Header from './components/Header'
+import Footer from './components/Footer'
 import { UserProvider } from './contexts/UserContext'
-import ProtectedRoute from './components/Helpers/ProtectedRoute';
-import Photo from './components/Photo';
-import UserProfile from './components/User/userProfile';
-import PageNotFound from './components/Helpers/PageNotFound';
+import ProtectedRoute from './components/Helpers/ProtectedRoute'
+import Photo from './components/Photo/Photo'
+import UserProfile from './components/User/UserProfile'
+import PageNotFound from './components/Helpers/PageNotFound'
+
+import './App.css'
 
 function App() {
   return (
@@ -32,7 +33,7 @@ function App() {
         </UserProvider>
       </BrowserRouter>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

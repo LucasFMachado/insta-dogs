@@ -1,8 +1,9 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom';
-import styles from './Header.module.css'
 import { ReactComponent as Dogs } from '../../assets/dogs.svg'
 import { UserContext } from '../../contexts/UserContext'
+
+import styles from './styles.module.css'
 
 function Header() {
   const { data } = useContext(UserContext);
@@ -30,4 +31,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default Header

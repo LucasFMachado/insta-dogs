@@ -1,7 +1,7 @@
 import React from 'react'
 import { ReactComponent as Dogs } from '../../assets/dogs-footer.svg'
 
-import styles from './Footer.module.css'
+import styles from './styles.module.css'
 
 function Footer() {
   return (
